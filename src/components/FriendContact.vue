@@ -19,7 +19,11 @@
 <script>
 export default {
   props: {
-    friend: Object,
+    friend: {
+      type: Object,
+      required: true,
+      
+    },
   },
   data() {
     return {
