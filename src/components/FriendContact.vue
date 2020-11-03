@@ -2,6 +2,7 @@
   <li>
     <h2>{{ friend.name }} {{ friend.isFavorite ? '(Favorite)' : '' }}</h2>
     <button @click="toggleDetails">{{ detailsAreVisible ? 'Hide' : 'Show' }} Details</button>
+    <button @click="toggleFavorite">toggle Favorite</button>
     <ul v-if="detailsAreVisible">
       <li>
         <strong>Phone:</strong>
@@ -28,6 +29,10 @@ export default {
   methods: {
     toggleDetails() {
       this.detailsAreVisible = !this.detailsAreVisible;
+    },
+    toggleFavorite() {
+      // eslint-disable-next-line vue/no-mutating-props
+      this.friend.isFavorite = !this.friend.isFavorite;
     }
   }
 };
