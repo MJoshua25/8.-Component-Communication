@@ -4,8 +4,7 @@
       <h1>My Friends</h1>
     </header>
     <ul>
-      <friend-contact></friend-contact>
-      <friend-contact></friend-contact>
+      <friend-contact v-bind:friend="friends[index]" v-for="(index, i) in friends"></friend-contact>
     </ul>
   </section>
 </template>
