@@ -4,8 +4,8 @@
       <h1>My Friends</h1>
     </header>
     <ul>
-      <friend-contact v-bind:friend="friends[0]"></friend-contact>
-      <friend-contact v-bind:friend="friends[1]"></friend-contact>
+      <friend-contact v-model:friend="friends[0]"></friend-contact>
+      <friend-contact v-model:friend="friends[1]"></friend-contact>
     </ul>
   </section>
 </template>
