@@ -34,7 +34,7 @@ export default {
       this.detailsAreVisible = !this.detailsAreVisible;
     },
     toggleFavorite() {
-      this.$emit('toggle-favorite');
+      this.$emit('toggle-favorite', this.friend.id);
     }
   }
 };
