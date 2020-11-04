@@ -7,7 +7,7 @@
       <friend-contact 
         v-for="(item, index) in friends"
         :key="index"
-        :initFriend="friends[index]"
+        :friend="friends[index]"
         @toggle-favorite="toggleFavoriteStatut"
         >
         </friend-contact>
@@ -38,8 +38,9 @@ export default {
     };
   },
   methods: {
-    toggleFavoriteStatut (){
-
+    toggleFavoriteStatut (/*String*/frientId){
+      const identifiedFriend = this.friends.find(friend => friend.id == frientId);
+      identifiedFriend.isFavorite = !identifiedFriend.isFavorite
     }
   }
 };
