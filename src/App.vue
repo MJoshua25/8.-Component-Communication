@@ -8,6 +8,7 @@
         v-for="(item, index) in friends"
         :key="index"
         :initFriend="friends[index]"
+        @toggle-favorite="toggleFavoriteStatut"
         >
         </friend-contact>
     </ul>
@@ -36,6 +37,11 @@ export default {
       ],
     };
   },
+  methods: {
+    toggleFavoriteStatut (){
+
+    }
+  }
 };
 </script>
 

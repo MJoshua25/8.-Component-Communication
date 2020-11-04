@@ -19,15 +19,14 @@
 <script>
 export default {
   props: {
-    initFriend: {
+    friend: {
       type: Object,
       required: true,
     },
   },
   data() {
     return {
-      detailsAreVisible: false,
-      friend: this.initFriend
+      detailsAreVisible: false
     };
   },
   methods: {
@@ -35,7 +34,7 @@ export default {
       this.detailsAreVisible = !this.detailsAreVisible;
     },
     toggleFavorite() {
-      this.friend.isFavorite = !this.friend.isFavorite;
+      this.$emit('toggle-favorite');
     }
   }
 };
