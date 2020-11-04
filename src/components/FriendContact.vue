@@ -19,15 +19,15 @@
 <script>
 export default {
   props: {
-    friend: {
+    initFriend: {
       type: Object,
       required: true,
-      
     },
   },
   data() {
     return {
       detailsAreVisible: false,
+      friend: this.initFriend
     };
   },
   methods: {
@@ -35,7 +35,6 @@ export default {
       this.detailsAreVisible = !this.detailsAreVisible;
     },
     toggleFavorite() {
-      // eslint-disable-next-line vue/no-mutating-props
       this.friend.isFavorite = !this.friend.isFavorite;
     }
   }
