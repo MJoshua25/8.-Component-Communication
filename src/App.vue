@@ -4,8 +4,12 @@
       <h1>My Friends</h1>
     </header>
     <ul>
-      <friend-contact v-bind:initFriend="friends[0]"></friend-contact>
-      <friend-contact v-bind:initFriend="friends[1]"></friend-contact>
+      <friend-contact 
+        v-for="(item, index) in friends"
+        :key="index"
+        :initFriend="friends[index]"
+        >
+        </friend-contact>
     </ul>
   </section>
 </template>
