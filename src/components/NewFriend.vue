@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @submit.prevent="submitData">
       <div>
           <label>Name</label>
           <input v-model="friend.name" type="text"/>
@@ -20,6 +20,7 @@
 
 <script>
 export default {
+    emits: ['add-contact'],
     props: {
 
     },
@@ -33,7 +34,9 @@ export default {
         }
     },
     methods: {
-
+        submitData () {
+            this.$emit('add-contact',  this.friend)
+        }
     }
 }
 </script>
