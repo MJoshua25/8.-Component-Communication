@@ -10,6 +10,7 @@
         :key="index"
         :friend="friends[index]"
         @toggle-favorite="toggleFavoriteStatut"
+        @delete-friend="deleteFriend"
         >
         </friend-contact>
     </ul>
@@ -42,6 +43,9 @@ export default {
     toggleFavoriteStatut (/*String*/frientId){
       const identifiedFriend = this.friends.find(friend => friend.id == frientId);
       identifiedFriend.isFavorite = !identifiedFriend.isFavorite
+    },
+    deleteFriend (/*String*/frientId){
+      this.friends.filter(friend => friend.id != frientId);
     },
     addContact(/*Object*/newFriend) {
       newFriend.id = new Date().toString()
