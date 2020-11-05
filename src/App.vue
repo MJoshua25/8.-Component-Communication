@@ -45,7 +45,7 @@ export default {
       identifiedFriend.isFavorite = !identifiedFriend.isFavorite
     },
     deleteFriend (/*String*/frientId){
-      this.friends.filter(friend => friend.id != frientId);
+      this.friends = this.friends.filter(friend => friend.id != frientId);
     },
     addContact(/*Object*/newFriend) {
       newFriend.id = new Date().toString()
