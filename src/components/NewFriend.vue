@@ -13,7 +13,7 @@
           <input v-model="friend.email" type="email"/>
       </div>
       <div>
-          <button>Add contact</button>
+          <button type="submit">Add contact</button>
       </div>
   </form>
 </template>
@@ -36,6 +36,11 @@ export default {
     methods: {
         submitData () {
             this.$emit('add-contact',  this.friend)
+            this.friend = {
+                name: "",
+                phone: "",
+                email: "",
+            }
         }
     }
 }
